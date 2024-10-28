@@ -1,4 +1,3 @@
 # smt-tool
-smt-tool
 
-pip install -r pip_requirements.txt
+pip install -r requirements.txt
