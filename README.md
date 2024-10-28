@@ -1,3 +1,5 @@
 # smt-tool
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+
+streamlit run stats.py
