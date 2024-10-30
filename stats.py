@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 
+SERVICES_FILE = "managedServicesFullList.csv"
 
 st.set_page_config(layout="wide")
 
@@ -65,6 +66,7 @@ def recursive_boilerplate_generator(dataframe, key):
         return dataframe  # If no search input, return the original dataframe
 
 
+services_df = pd.read_csv(SERVICES_FILE, dtype='unicode')
 
 uploaded_file = st.file_uploader("Choose a file")
 
@@ -76,7 +78,6 @@ if uploaded_file is not None:
     requests_df['Description'] = requests_df['Description'].str.lower()
     requests_df = requests_df.rename(columns={'Issue key': 'Key'})
 
-    services_df = pd.read_csv("managedServicesFullList.csv", dtype='unicode')
     services_df['Name'] = services_df['Name'].str.lower()
 
     block1_col1, block1_col2 = st.columns(2)
